@@ -1,0 +1,16 @@
+Gitlab is a server which basically helps you to create the repositories , maintain all the commits and pipelines. 
+Gitlab server responsibility is only to check if the runner is accepting the pipeline and executing or not. 
+
+But the moment you create the pipelines, it gives this entire process to gitlab runner , and runner is now responsible to do all the steps metioned for the pipeline, download all the artifacts. 
+
+Scalability: 
+We can have as many runners we want. default by gitlab shared runners will be enabled , but. if require we can create our very own runners and deploy on kubernetes
+
+
+Steps of Runner: 
+1. runner starts
+2. creates a docker image
+3. prepare env insied docker image by cloning repository
+4. execute all the commands 
+5. will uploads artifacts if there is any 
+6. will finish the job by cleaning up , only saved thing will be these logs 
