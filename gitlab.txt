@@ -1,0 +1,16 @@
+
+Gitlab detects the yml file by itself and starts the pipeline. Gitlab runner Successful Job : exit code will be 0 Failed Job : exit code will be 1
+
+Very first thing when we start writing yaml file is to define a job. Always provide spaces not tab. After defining the job , we can start writing the shell commands we want to run in the job.
+
+We can define multiple jobs. To decide the order of the jobs, we can define the stages, and for every job we can add one extra param to define the stage name. Gitlab CI will automatically assign jobs to the "test" stage, even if no test stage was defined.
+
+Remember : The jobs that we are creating will be independent of each other which means the moment one job is completed then all the data related to it will be deleted, if we want the data of one job to be used by another then we will have to write down the artifacts and define the path of files which should be shared among the jobs.
+
+These artifacts can be downloaded as well from the gitlab dashboard itself.
+
+Make sure that:
+
+You have named your file .gitlab-ci.yml (and not gitlab-ci.yml or .gitlab-ci.yaml)
+yaml is data serialization language used by gitlab
+the pipeline file is in the root of the project and not inside a directory
