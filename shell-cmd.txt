@@ -1,0 +1,7 @@
+To make a folder : mkdir build 
+To change the directory : cd build
+To create a new file : touch car.txt
+To replace the entire content of any file with other content : echo "hello" > car.txt 
+To append the content in the file : echo "america" >> car.txt
+To test if a file is existed or not : test -f build/car.txt
+To check if any string or expression exists in the file : grep "wheel" car.txt 
